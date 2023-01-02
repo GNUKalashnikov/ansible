@@ -1,0 +1,45 @@
+# Connect to the vultr instantance
+# Make sthe connection passwordless (Based on ip/ssh)
+# do an echo
+
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Updating System
+    apt:
+      update_cache: yes
+      upgrade: yes
+
+  - name: Echo
+    ansible.builtin.shell:
+      cmd: lsu
+  
+  - name: ls
+    shell: echo "You are a meem"
+    register: shell_result
+    
+  # - debug:
+  #   var: shell_result.stdout_lines
+
+  # Check install for nginx, if not install it
+  # Copy a nginx config to /etc/nginx/sites-available
+    # Make a symbolic link 
+  # Download the latest version of nextcloud
+  # Certbot the domain
+    # Do this as an option
+  # Check for a 200 status
+
+  # Somehow implement an install of a db
+    # check if it's already installed
+  # Create a nginx admin user
+    # Add password
+    # Output the password in the logs of an asnible process 
+  
+  
+
+  - name: Print Of LS?
+    debug:
+      msg: "{{ shell_result.stdout_lines }}"
