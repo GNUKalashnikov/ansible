@@ -26,7 +26,7 @@ Accessing varriables within playbooks is done like this:
 
 `"{{ variable_name }}"`
 
-Like this !(image)[/home/ivan/Documents/projects/ansible/vars.png]
+Like this ![Image](vars.png "Vars")
 
 **Secret Values**
 Keys, passwords, api-keys can be stored and accessed a number of ways.
