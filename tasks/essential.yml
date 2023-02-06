@@ -7,10 +7,10 @@
 
 - name: Installings
   apt:
-    name: 
-      - nginx
-      - vim
-      - htop
-      - docker
+    name: "{{ packages }}"
     state: latest
 
+- name: Docker
+  apt:
+    name: "{{ install_docker }}"
+    state: latest

@@ -11,9 +11,8 @@ packages:
   - lsb-release
 
 install_docker:
-  - docker-ce 
-  - docker-ce-cli 
-  - containerd.io 
-  - docker-buildx-plugin 
-  - docker-compose-plugin
-
+  - docker
+  - docker-compose
+  - docker-doc
+  - docker-registry
+  - docker.io

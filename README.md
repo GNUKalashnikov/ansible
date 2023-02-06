@@ -22,6 +22,10 @@ The File should attribute inventory to the hosts and enable pipelining
     - group_vars
     - host_vars
 
+Accessing varriables within playbooks is done like this:
+
+`"{{ variable_name }}"`
+
 Like this !(image)[/home/ivan/Documents/projects/ansible/vars.png]
 
 **Secret Values**

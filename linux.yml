@@ -8,19 +8,17 @@
   become: true
   tasks:
 
-  - name: Updating System
-    apt:
-      update_cache: yes
-      upgrade: yes
+
+  - import_tasks: tasks/essential.yml
 
   - name: Echo
     ansible.builtin.shell:
-      cmd: lsu
+      cmd: neofetch
   
   - name: ls
-    shell: echo "You are a meem"
+    shell: systemctl status docker
     register: shell_result
-    
+
   # - debug:
   #   var: shell_result.stdout_lines
 
@@ -40,6 +38,8 @@
   
   
 
-  - name: Print Of LS?
+  - name: Docker Status
     debug:
       msg: "{{ shell_result.stdout_lines }}"
+
+#  - import_tasks: tasks/shutdown.yml
