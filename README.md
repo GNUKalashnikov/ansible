@@ -23,3 +23,12 @@ The File should attribute inventory to the hosts and enable pipelining
     - host_vars
 
 Like this !(image)[/home/ivan/Documents/projects/ansible/vars.png]
+
+**Secret Values**
+Keys, passwords, api-keys can be stored and accessed a number of ways.
+One way is creating some hardcoded values within a directory; or using ansible-vault
+
+1.  `ansible-vault create secret.yml` 
+This will prompt for a password and once createad, looking into will show a encrypted file.
+To access the files content once more use:
+2. `ansible-vault edit secret.yml`
