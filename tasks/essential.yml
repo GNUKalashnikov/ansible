@@ -1,0 +1,16 @@
+---
+
+- name: Updatings
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Installings
+  apt:
+    name: 
+      - nginx
+      - vim
+      - htop
+      - docker
+    state: latest
+

@@ -13,3 +13,13 @@ A file that containers the location of all the hosts or nodes you will interacti
 ## SSH
 *How to copy a ssh file to the host*
 `ssh-copy-id -i ~/location username@host`
+
+#### Ansible.cfg
+
+The File should attribute inventory to the hosts and enable pipelining
+### Variables
+- Places to use variables
+    - group_vars
+    - host_vars
+
+Like this !(image)[/home/ivan/Documents/projects/ansible/vars.png]
