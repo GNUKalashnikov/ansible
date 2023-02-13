@@ -1,0 +1,7 @@
+---
+  - name: Import git repo
+    git:
+      repo: https://github.com/GNUKalashnikov/ansible-nextcloud.git
+      dest: ~/
+      cline: yes
+      update: yes
