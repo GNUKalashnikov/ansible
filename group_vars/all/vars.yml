@@ -9,6 +9,7 @@ packages:
   - ca-certificates
   - gnupg
   - lsb-release
+  - rsync
 
 install_docker:
   - docker
