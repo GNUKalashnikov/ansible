@@ -2,6 +2,13 @@
   - name: Import git repo
     git:
       repo: https://github.com/GNUKalashnikov/ansible-nextcloud.git
-      dest: ~/
-      cline: yes
+      dest: /root/host
+      clone: yes
       update: yes
+  
+  - name: Adding a .env file
+    ansible.builtin.file:
+    path: /root/host/.env
+    state: touch
+    mode: u=rw,g=r,o=r
+    

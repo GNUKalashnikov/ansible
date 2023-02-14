@@ -7,6 +7,14 @@ Information gathered from
 
 ### Project Structure and inventory
 
+### How to use ansible generally
+
+`ansible-playbook main.yml --ask-become-pass`
+this will run the main.yml file
+
+`ansible all --key-file ~/.ssh/sshfile -i inventory -m ping`
+Will ping the hosts using the sshfile provided
+
 #### A Hosts File
 A file that containers the location of all the hosts or nodes you will interacting with
 
@@ -49,3 +57,7 @@ One way is creating some hardcoded values within a directory; or using ansible-v
 This will prompt for a password and once createad, looking into will show a encrypted file.
 To access the files content once more use:
 2. `ansible-vault edit secret.yml`
+
+
+### Injecting vallues from ansible secrets to a file for docker to pickup
+We want to create a way where we specify secrets and anonymously send them to our docker-compose file location into a made `.env`, where we replace the values with the attributes assigned from our ansible-vault.
