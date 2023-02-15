@@ -14,11 +14,11 @@
   
   - name: Alter file with variables
     ansible.builtin.blockinfile:
-    path: /root/host/.env
-    block: | 
-      $MYSQL_ROOT_PASSWORD={{ MYSQL_ROOT_PASSWORD }}
-      $MYSQL_PASSWORD={{ MYSQL_PASSWORD }}
-      $NEXTCLOUD_ADMIN_PASSWORD={{ NEXTCLOUD_ADMIN_PASSWORD }}
-      $NEXTCLOUD_ADMIN_USER={{ NEXTCLOUD_ADMIN_USER }}
+      path: /root/host/.env
+      block: | 
+        $MYSQL_ROOT_PASSWORD={{ MYSQL_ROOT_PASSWORD }}
+        $MYSQL_PASSWORD={{ MYSQL_PASSWORD }}
+        $NEXTCLOUD_ADMIN_PASSWORD={{ NEXTCLOUD_ADMIN_PASSWORD }}
+        $NEXTCLOUD_ADMIN_USER={{ NEXTCLOUD_ADMIN_USER }}
 
     
