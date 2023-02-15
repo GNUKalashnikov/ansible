@@ -6,11 +6,11 @@
       clone: yes
       update: yes
   
-  - name: Adding a .env file
+  - name: Adding a env file
     ansible.builtin.file:
-    path: /root/host/.env
-    state: touch
-    mode: u=rw,g=r,o=r
+      path: /root/host/.env
+      state: touch
+      mode: u=rw,g=r,o=r
   
   - name: Alter file with variables
     ansible.builtin.blockinfile:
@@ -20,5 +20,15 @@
         $MYSQL_PASSWORD={{ MYSQL_PASSWORD }}
         $NEXTCLOUD_ADMIN_PASSWORD={{ NEXTCLOUD_ADMIN_PASSWORD }}
         $NEXTCLOUD_ADMIN_USER={{ NEXTCLOUD_ADMIN_USER }}
+  
+  - name: Moving the Nginx config file
+    ansible.builtin.copy:
+      src: /root/host/docker
+      dest: /etc/nginx/sites-enabled
+      remote_src: yes
+      
+      
+
+  
 
     

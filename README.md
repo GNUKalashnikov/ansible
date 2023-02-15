@@ -61,3 +61,8 @@ To access the files content once more use:
 
 ### Injecting vallues from ansible secrets to a file for docker to pickup
 We want to create a way where we specify secrets and anonymously send them to our docker-compose file location into a made `.env`, where we replace the values with the attributes assigned from our ansible-vault.
+
+## Running the playbook with the vault
+*Note* the `@` sign is very neccessary 
+
+`ansible-playbook main.yml -e @group_vars/all/nextcloud.enc --ask-become-pass --ask-vault-pass`

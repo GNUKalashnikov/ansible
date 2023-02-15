@@ -16,8 +16,12 @@
     ansible.builtin.shell:
       cmd: neofetch
   
-  - name: ls
+  - name: docker
     shell: systemctl status docker
+    register: shell_result
+  
+  - name: nginx-status
+    shell: systemctl restart nginx
     register: shell_result
 
   # - debug:

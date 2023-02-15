@@ -10,6 +10,7 @@ packages:
   - gnupg
   - lsb-release
   - rsync
+  - nginx
 
 install_docker:
   - docker
