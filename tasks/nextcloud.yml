@@ -26,6 +26,19 @@
       src: /root/host/docker
       dest: /etc/nginx/sites-enabled
       remote_src: yes
+  
+  - name: Shutdown the running service
+    community.docker.docker_compose:
+      project_src: /root/host
+      state: absent
+  
+  - name: Create and start services
+    community.docker.docker_compose:
+        project_src: /root/host
+    register: output
+
+  - ansible.builtin.debug:
+        var: output
       
       
 
