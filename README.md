@@ -63,6 +63,7 @@ To access the files content once more use:
 We want to create a way where we specify secrets and anonymously send them to our docker-compose file location into a made `.env`, where we replace the values with the attributes assigned from our ansible-vault.
 
 ## Running the playbook with the vault
+glace at a redhat resources: [Ansible-vault](https://www.redhat.com/sysadmin/ansible-playbooks-secrets)
 *Note* the `@` sign is very neccessary 
 
 `ansible-playbook main.yml -e @group_vars/all/nextcloud.enc --ask-become-pass --ask-vault-pass`
