@@ -67,3 +67,9 @@ glace at a redhat resources: [Ansible-vault](https://www.redhat.com/sysadmin/ans
 *Note* the `@` sign is very neccessary 
 
 `ansible-playbook main.yml -e @group_vars/all/nextcloud.enc --ask-become-pass --ask-vault-pass`
+
+## Adding cron file we need to refresh feeds within nextcloud
+*How is this achived?* 
+1. a one liner that triggers at a certain point in time 
+2. Send the one liner under root to something like crontab
+Need to find out what the file i'm in need to cron 
