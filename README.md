@@ -56,7 +56,7 @@ One way is creating some hardcoded values within a directory; or using ansible-v
 1. `ansible-vault create secret.yml` 
 This will prompt for a password and once createad, looking into will show a encrypted file.
 To access the files content once more use:
-2. `ansible-vault edit secret.yml`
+2. `ansible-vault edit location/secret.enc`
 
 
 ### Injecting vallues from ansible secrets to a file for docker to pickup
