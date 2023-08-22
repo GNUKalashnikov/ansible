@@ -11,6 +11,7 @@ packages:
   - lsb-release
   - rsync
   - nginx
+  - cron
 
 install_docker:
   - docker
