@@ -16,16 +16,16 @@
     ansible.builtin.blockinfile:
       path: /root/host/.env
       block: | 
-        $MYSQL_ROOT_PASSWORD={{ MYSQL_ROOT_PASSWORD }}
-        $MYSQL_PASSWORD={{ MYSQL_PASSWORD }}
-        $MYSQL_DATABASE={{ MYSQL_DATABASE }}
-        $MYSQL_USER={{ MYSQL_USER }}
-        $NEXTCLOUD_ADMIN_PASSWORD={{ NEXTCLOUD_ADMIN_PASSWORD }}
-        $NEXTCLOUD_ADMIN_USER={{ NEXTCLOUD_ADMIN_USER }}
-        $NEXTCLOUD_TRUSTED_DOMAINS={{ NEXTCLOUD_TRUSTED_DOMAINS }}
-        $OVERWRITEPROTOCOL={{ OVERWRITEPROTOCOL }}
-        $CLIENT_MAX_BODY_SIZE={{ CLIENT_MAX_BODY_SIZE }}
-        $UPLOAD_MAX_FILESIZE={{ UPLOAD_MAX_FILESIZE }}
+        MYSQL_ROOT_PASSWORD={{ MYSQL_ROOT_PASSWORD }}
+        MYSQL_PASSWORD={{ MYSQL_PASSWORD }}
+        MYSQL_DATABASE={{ MYSQL_DATABASE }}
+        MYSQL_USER={{ MYSQL_USER }}
+        NEXTCLOUD_ADMIN_PASSWORD={{ NEXTCLOUD_ADMIN_PASSWORD }}
+        NEXTCLOUD_ADMIN_USER={{ NEXTCLOUD_ADMIN_USER }}
+        NEXTCLOUD_TRUSTED_DOMAINS={{ NEXTCLOUD_TRUSTED_DOMAINS }}
+        OVERWRITEPROTOCOL={{ OVERWRITEPROTOCOL }}
+        CLIENT_MAX_BODY_SIZE={{ CLIENT_MAX_BODY_SIZE }}
+        UPLOAD_MAX_FILESIZE={{ UPLOAD_MAX_FILESIZE }}
   
   - name: Moving the Nginx config file
     ansible.builtin.copy:
@@ -41,6 +41,7 @@
   - name: Create and start services
     community.docker.docker_compose:
         project_src: /root/host
+        env_file: /root/host/.env
     register: output
 
   - ansible.builtin.debug:
