@@ -16,6 +16,7 @@
     ansible.builtin.blockinfile:
       path: /root/host/.env
       block: | 
+        STORAGE_LOCATION={{ STORAGE_LOCATION}}
         MYSQL_ROOT_PASSWORD={{ MYSQL_ROOT_PASSWORD }}
         MYSQL_PASSWORD={{ MYSQL_PASSWORD }}
         MYSQL_DATABASE={{ MYSQL_DATABASE }}
