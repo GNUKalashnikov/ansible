@@ -37,21 +37,15 @@
       remote_src: yes
   
   - name: Shutdown the running service
-    community.docker.docker_compose:
+    community.docker.docker_compose_v2:
       project_src: "{{ STORAGE_LOCATION }}"
       state: absent
   
   - name: Create and start services
-    community.docker.docker_compose:
+    community.docker.docker_compose_v2:
         project_src: "{{ STORAGE_LOCATION }}"
-        env_file: "{{ STORAGE_LOCATION }}/.env"
+        env_files: "{{ STORAGE_LOCATION }}/.env"
     register: output
 
   - ansible.builtin.debug:
         var: output
-      
-      
-
-  
-
-    
